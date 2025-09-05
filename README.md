@@ -6,6 +6,7 @@ A minimal starter template for projects using Vite + Vanilla JS.
 ```bash
 git clone https://github.com/joshuarconcepcion/vite-vanilla-template project-name
 cd my-new-project
+* Edit name in package.json *
 npm install
 npm run dev
 ```
