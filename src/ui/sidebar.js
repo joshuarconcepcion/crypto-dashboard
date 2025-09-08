@@ -2,6 +2,7 @@ import sidebarLogoImg from '../media/images/sidebar/sidebarLogo.png';
 import sidebarMenuDashboardImg from '../media/images/sidebar/dashboard.png';
 import sidebarMenuAnalyticsImg from '../media/images/sidebar/analytics.png'
 import sidebarMenuReportsImg from '../media/images/sidebar/reports.png'
+import sidebarAccountImg from '../media/images/sidebar/sidebarAccount.png';
 
 export function renderSidebar(container) {
     const sidebar = document.createElement('aside');
@@ -72,6 +73,28 @@ const renderMenuItemContainer = (img, label, view) => {
 const renderSideBarAccount = () => {
     const sidebarAccountContainer = document.createElement('div');
     sidebarAccountContainer.classList.add('sidebar-account-container');
+
+    const accountProfileImgContainer = document.createElement('div');
+    accountProfileImgContainer.classList.add('account-profile-img-container');
+
+    const accountProfileImg = new Image();
+    accountProfileImg.classList.add('account-profile-img');
+    accountProfileImg.src = sidebarAccountImg;
+
+    const accountProfileNameContainer = document.createElement('div');
+    accountProfileNameContainer.classList.add('account-profile-name-container');
+
+    const accountProfileName = document.createElement('h2');
+    accountProfileName.classList.add('account-profile-name');
+    accountProfileName.textContent = 'Joshua Concepcion';
+
+    const accountProfileEmail = document.createElement('h3');
+    accountProfileEmail.classList.add('account-profile-email');
+    accountProfileEmail.textContent = 'joshuarconcepcion@protonmail.com';
+
+    accountProfileImgContainer.appendChild(accountProfileImg);
+    accountProfileNameContainer.append(accountProfileName, accountProfileEmail);
+    sidebarAccountContainer.append(accountProfileImgContainer, accountProfileNameContainer);
 
     return sidebarAccountContainer;
 }
