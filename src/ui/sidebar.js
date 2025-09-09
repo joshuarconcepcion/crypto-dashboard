@@ -48,25 +48,25 @@ const renderSidebarMenu = () => {
 
 
     sidebarMenuContainer.append(
-        renderMenuItemContainer(menuDashboardIcon, 'Dashboard', 'dashboard'),
-        renderMenuItemContainer(menuAnalyticsIcon, 'Analytics', 'analytics'),
-        renderMenuItemContainer(menuReportsIcon, 'Reports', 'reports')
+        renderMenuItemContainer(menuDashboardIcon, 'dashboard'),
+        renderMenuItemContainer(menuAnalyticsIcon, 'analytics'),
+        renderMenuItemContainer(menuReportsIcon, 'reports')
     )
 
     return sidebarMenuContainer;
 }
 
-const renderMenuItemContainer = (img, label, view) => {
+const renderMenuItemContainer = (img,view) => {
     const container = document.createElement('div');
     container.classList.add('menu-item-container');
 
     const a = document.createElement('a');
     a.href = `#${view}`
     a.dataset.view = view;
-    a.textContent = label;
     a.classList.add('menu-item');
 
-    container.append(img, a);
+    a.appendChild(img);
+    container.append(a);
     return container;
 }
 
@@ -81,20 +81,12 @@ const renderSidebarAccount = () => {
     accountProfileImg.classList.add('account-profile-img');
     accountProfileImg.src = sidebarAccountImg;
 
-    const accountProfileNameContainer = document.createElement('div');
-    accountProfileNameContainer.classList.add('account-profile-name-container');
-
-    const accountProfileName = document.createElement('span');
-    accountProfileName.classList.add('account-profile-name');
-    accountProfileName.textContent = 'Joshua Concepcion';
-
     const accountProfileEmail = document.createElement('span');
     accountProfileEmail.classList.add('account-profile-email');
     accountProfileEmail.textContent = 'joshuarconcepcion@protonmail.com';
 
     accountProfileImgContainer.appendChild(accountProfileImg);
-    accountProfileNameContainer.append(accountProfileName, accountProfileEmail);
-    sidebarAccountContainer.append(accountProfileImgContainer, accountProfileNameContainer);
+    sidebarAccountContainer.append(accountProfileImgContainer)
 
     return sidebarAccountContainer;
 }
