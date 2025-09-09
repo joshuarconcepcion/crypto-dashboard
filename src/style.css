@@ -192,7 +192,7 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 .account-profile-email { font-size: .75rem; }
 
 
-/*** DASHBOARD ***/
+/*** DASHBOARD CONTAINER ***/
 
 .dashboard-container {
   display: grid;
@@ -212,6 +212,8 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   padding: 2rem;
 }
 
+/*** DASHBOARD BALANCE ***/
+
 .dashboard-balance-container {
   display: flex;
   flex-direction: column;
@@ -227,14 +229,9 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   color: var(--color-text-grey);
 }
 
-.balance-number {
-  font-size: 5rem;
-}
+.balance-number { font-size: 5rem; }
 
-.balance-number span {
-  color: var(--color-text-grey);
-  font-size: 3rem;
-}
+.balance-number span { color: var(--color-text-grey); font-size: 3rem; }
 
 .balance-trend {
   display: flex;
@@ -254,7 +251,6 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   width: 1.5rem;
 }
 
-.balance-trend-value {
-  margin: 0;
-  line-height: 1; 
-}
+.balance-trend-value { margin: 0; line-height: 1; }
+
+/*** DASHBOARD FAVORITES ***/
