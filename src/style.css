@@ -3,9 +3,7 @@
 /* Box sizing rules */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
 /* Prevent font size inflation */
 html {
@@ -24,15 +22,11 @@ p,
 figure,
 blockquote,
 dl,
-dd {
-  margin-block-end: 0;
-}
+dd { margin-block-end: 0; }
 
 /* Remove list styles on ul, ol elements with a list role */
 ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
+ol[role='list'] { list-style: none; }
 
 /* Set core body defaults */
 body {
@@ -48,44 +42,29 @@ h3,
 h4,
 button,
 input,
-label {
-  line-height: 1.1;
-}
+label { line-height: 1.1; }
 
 /* Balance text wrapping on headings */
 h1,
 h2,
 h3,
-h4 {
-  text-wrap: balance;
-}
+h4 { text-wrap: balance; }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-}
+a:not([class]) { text-decoration-skip-ink: auto; color: currentColor; }
 
 /* Make images easier to work with */
 img,
-picture {
-  max-width: 100%;
-  display: block;
-}
+picture { max-width: 100%; display: block; }
 
 /* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-}
+select { font-family: inherit; font-size: inherit; }
 
 /* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
+textarea:not([rows]) { min-height: 10em; }
 
 /* Anchored targets get extra scroll margin */
 :target {
@@ -116,23 +95,17 @@ html, body {
   --color-background-grey: rgb(31, 31, 31);
   --color-main-black:  rgb(0, 0, 0);
   --color-text-white: rgb(223, 219, 216);
+  --color-text-grey: rgb(78, 78, 78);
 }
 
 
 /*** BASE ELEMENTS ***/
 
-a { 
-  text-decoration: none; 
-}
+a {  text-decoration: none;  }
 
-body {
-  font-family: 'Poppins';
-  background-color: var(--color-background-grey);
-}
+body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 
-#app {
-  display: flex;
-}
+#app { display: flex; }
 
 /*** SIDEBAR ***/
 
@@ -154,10 +127,7 @@ body {
 
 /*** SIDEBAR: LOGO ***/
 
-.sidebar-logo-container img {
-  aspect-ratio: 1 / 1;
-  height: 4rem;
-}
+.sidebar-logo-container img { aspect-ratio: 1 / 1; height: 4rem; }
 
 
 /*** SIDEBAR: MENU ***/
@@ -217,13 +187,9 @@ body {
   gap: 0.25rem
 }
 
-.account-profile-name {
-  font-size: 1rem;
-}
+.account-profile-name { font-size: 1rem; }
 
-.account-profile-email {
-  font-size: .75rem;
-}
+.account-profile-email { font-size: .75rem; }
 
 
 /*** DASHBOARD ***/
@@ -238,4 +204,26 @@ body {
 
   background-color: var(--color-main-black);
   border-radius: 100px;
+}
+
+.dashboard-container-left {
+  display: flex;
+  color: var(--color-text-white);
+  padding: 2rem;
+}
+
+.balance-header, .balance-number { margin: 0; line-height: 4rem;}
+
+.balance-header {
+  font-size: 1rem;
+  color: var(--color-text-grey);
+}
+
+.balance-number {
+  font-size: 5rem;
+}
+
+.balance-number span {
+  color: var(--color-text-grey);
+  font-size: 3rem;
 }
