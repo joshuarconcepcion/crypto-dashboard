@@ -10,8 +10,8 @@ export function renderSidebar(container) {
     
     sidebar.append(
     renderSidebarLogo(),
-    renderSideBarMenu(),
-    renderSideBarAccount()
+    renderSidebarMenu(),
+    renderSidebarAccount()
     );
 
     container.appendChild(sidebar);
@@ -30,7 +30,7 @@ const renderSidebarLogo = () => {
     return sidebarLogoContainer;
 }
 
-const renderSideBarMenu = () => {
+const renderSidebarMenu = () => {
     const sidebarMenuContainer = document.createElement('div');
     sidebarMenuContainer.classList.add('sidebar-menu-container');
 
@@ -61,16 +61,16 @@ const renderMenuItemContainer = (img, label, view) => {
     container.classList.add('menu-item-container');
 
     const a = document.createElement('a');
-    a.href = '#${view}'
+    a.href = `#${view}`
     a.dataset.view = view;
     a.textContent = label;
     a.classList.add('menu-item');
 
     container.append(img, a);
-    return a;
+    return container;
 }
 
-const renderSideBarAccount = () => {
+const renderSidebarAccount = () => {
     const sidebarAccountContainer = document.createElement('div');
     sidebarAccountContainer.classList.add('sidebar-account-container');
 
@@ -84,11 +84,11 @@ const renderSideBarAccount = () => {
     const accountProfileNameContainer = document.createElement('div');
     accountProfileNameContainer.classList.add('account-profile-name-container');
 
-    const accountProfileName = document.createElement('h2');
+    const accountProfileName = document.createElement('span');
     accountProfileName.classList.add('account-profile-name');
     accountProfileName.textContent = 'Joshua Concepcion';
 
-    const accountProfileEmail = document.createElement('h3');
+    const accountProfileEmail = document.createElement('span');
     accountProfileEmail.classList.add('account-profile-email');
     accountProfileEmail.textContent = 'joshuarconcepcion@protonmail.com';
 

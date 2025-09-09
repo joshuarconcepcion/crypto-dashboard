@@ -1,4 +1,3 @@
-
 /*** CSS RESET ***/
 
 /* Box sizing rules */
@@ -16,12 +15,20 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin-block-end: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+/* Remove list styles on ul, ol elements with a list role */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
@@ -30,18 +37,26 @@ ol[role='list'] {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  min-width: 100%;
   line-height: 1.5;
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -59,8 +74,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -70,9 +87,129 @@ textarea:not([rows]) {
   min-height: 10em;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
+/* Anchored targets get extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
 }
 
+html, body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
 /*** END OF CSS RESET ***/
+
+
+/*** FONTS ***/
+
+@font-face {
+  font-family: 'poppins';
+  src: url('./media/fonts/Poppins-Medium.ttf');
+}
+
+
+/*** THEME / CSS VARIABLES ***/
+
+:root {
+  --color-white: rgb(245, 243, 244);
+  --color-blue:  rgb(25, 34, 49);
+}
+
+
+/*** BASE ELEMENTS ***/
+
+a { 
+  text-decoration: none; 
+}
+
+body {
+  font-family: 'Poppins';
+}
+
+/*** SIDEBAR ***/
+
+.sidebar {
+  width: 20%;
+  height: calc(100vh - 2rem);
+  padding: 1rem;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: var(--color-blue);
+  border-radius: 50px;
+}
+
+
+/*** SIDEBAR: LOGO ***/
+
+.sidebar-logo-container img {
+  aspect-ratio: 1 / 1;
+  height: 4rem;
+}
+
+
+/*** SIDEBAR: MENU ***/
+
+.sidebar-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 2rem;
+}
+
+.menu-item-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  width: max-content;
+}
+
+.menu-item { 
+  color: var(--color-white); 
+}
+
+.menu-item-icon {
+  aspect-ratio: 1 / 1;
+  height: 1.2rem;
+  color: var(--color-white);
+}
+
+
+/*** SIDEBAR: ACCOUNT ***/
+
+.sidebar-account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  line-height: 1rem;
+
+  color: var(--color-white);
+}
+
+.account-profile-img {
+  aspect-ratio: 1 / 1;
+  height: 3rem;
+  border-radius: 25px;
+}
+
+.account-profile-name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem
+}
+
+.account-profile-name {
+  font-size: 1rem;
+}
+
+.account-profile-email {
+  font-size: .75rem;
+}
