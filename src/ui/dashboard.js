@@ -1,3 +1,5 @@
+import arrowUpImg from '../media/images/dashboard/arrowUp.png';
+
 export function renderDashboard(container) {
     container.appendChild(renderDashboardContainer());
 }
@@ -30,6 +32,23 @@ const renderDashboardBalance = () => {
     balanceNumber.classList.add('balance-number');
     balanceNumber.innerHTML = '$42,124<span id="balance-decimals">.00</span>';
 
-    dashboardBalanceContainer.append(balanceHeader, balanceNumber);
+    const balanceTrend = document.createElement('div');
+    balanceTrend.classList.add('balance-trend');
+
+    const balanceTrendIcon = new Image();
+    balanceTrendIcon.classList.add('balance-trend-icon');
+    balanceTrendIcon.src = arrowUpImg;
+
+    const balanceTrendValue = document.createElement('p');
+    balanceTrendValue.classList.add('balance-trend-value');
+    balanceTrendValue.textContent = '+2.3%';
+
+    balanceTrend.append(balanceTrendIcon, balanceTrendValue);
+    dashboardBalanceContainer.append(balanceHeader, balanceNumber, balanceTrend);
+    
     return dashboardBalanceContainer;
+}
+
+const renderDashboardFavorites = () => {
+
 }
