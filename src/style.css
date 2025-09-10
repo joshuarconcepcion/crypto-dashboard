@@ -208,8 +208,11 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 
 .dashboard-container-left {
   display: flex;
-  color: var(--color-text-white);
+  flex-direction: column;
   padding: 2rem;
+  gap: 2rem;
+
+  color: var(--color-text-white);
 }
 
 /*** DASHBOARD BALANCE ***/
@@ -254,3 +257,5 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 .balance-trend-value { margin: 0; line-height: 1; }
 
 /*** DASHBOARD FAVORITES ***/
+
+.dashboard-favorites-header { font-size: 1rem; color: var(--color-text-grey) }

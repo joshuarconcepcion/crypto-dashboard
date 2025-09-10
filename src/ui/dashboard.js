@@ -3,17 +3,18 @@ import { renderDashboardFavorites } from './favorites';
 
 const renderDashboardContainer = () => {
     const dashboardContainer = document.createElement('div');
-    dashboardContainer.classList.add('dashboard-container');
+    dashboardContainer.className = 'dashboard-container';
 
     const dashboardContainerLeft = document.createElement('div');
-    dashboardContainerLeft.classList.add('dashboard-container-left');
+    dashboardContainerLeft.className = 'dashboard-container-left';
 
     const dashboardContainerRight = document.createElement('div');
-    dashboardContainerRight.classList.add('dashboard-container-right');
+    dashboardContainerRight.className = 'dashboard-container-right';
 
     dashboardContainerLeft.append(
         renderDashboardBalance(),
         renderDashboardFavorites()
+
     );
 
     dashboardContainer.append(dashboardContainerLeft, dashboardContainerRight);

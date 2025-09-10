@@ -5,22 +5,22 @@ export const renderDashboardBalance = () => {
     dashboardBalanceContainer.classList.add('dashboard-balance-container');
 
     const balanceHeader = document.createElement('p');
-    balanceHeader.classList.add('balance-header');
-    balanceHeader.innerHTML = 'Total Balance'
+    balanceHeader.className = 'balance-header';
+    balanceHeader.innerHTML = 'TOTAL BALANCE'
 
     const balanceNumber = document.createElement('p');
-    balanceNumber.classList.add('balance-number');
+    balanceNumber.className = 'balance-number';
     balanceNumber.innerHTML = '$42,124<span id="balance-decimals">.00</span>';
 
     const balanceTrend = document.createElement('div');
-    balanceTrend.classList.add('balance-trend');
+    balanceTrend.className = 'balance-trend';
 
     const balanceTrendIcon = new Image();
-    balanceTrendIcon.classList.add('balance-trend-icon');
+    balanceTrendIcon.className = 'balance-trend-icon';
     balanceTrendIcon.src = arrowUpImg;
 
     const balanceTrendValue = document.createElement('p');
-    balanceTrendValue.classList.add('balance-trend-value');
+    balanceTrendValue.className = 'balance-trend-value';
     balanceTrendValue.textContent = '+2.3%';
 
     balanceTrend.append(balanceTrendIcon, balanceTrendValue);
