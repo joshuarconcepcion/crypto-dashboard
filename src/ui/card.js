@@ -22,6 +22,9 @@ export function createCard({name, icon, symbol, price, priceChangePercentage, sp
 
     cardInfoContainer.append(cardName, cardIconContainer);
 
+    const cardSVGContainer = document.createElement('div');
+    cardSVGContainer.className = 'card-svg-container';
+
 
 
 }
