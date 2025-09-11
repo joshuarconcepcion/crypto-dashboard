@@ -4,7 +4,7 @@ import sidebarMenuAnalyticsImg from '../media/images/sidebar/analytics.png'
 import sidebarMenuReportsImg from '../media/images/sidebar/reports.png'
 import sidebarAccountImg from '../media/images/sidebar/sidebarAccount.png';
 
-export function renderSidebar(container) {
+export const renderSidebar = (container) => {
     const sidebar = document.createElement('aside');
     sidebar.classList.add('sidebar');
     

@@ -1,4 +1,4 @@
-export function renderDashboardFavorites() {
+export const renderDashboardFavorites = () => {
     const dashboardFavoritesContainer = document.createElement('div');
     dashboardFavoritesContainer.className = 'dashboard-favorites-container';
 

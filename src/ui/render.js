@@ -3,7 +3,7 @@ import { renderDashboard } from "./dashboard";
 
 const container = document.getElementById('app');
 
-export function renderUI() {
+export const renderUI = () => {
     renderSidebar(container);
     renderDashboard(container);
 }

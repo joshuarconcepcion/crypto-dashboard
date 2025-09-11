@@ -22,7 +22,7 @@ const renderDashboardContainer = () => {
     return dashboardContainer;
 }
 
-export function renderDashboard(container) {
+export const renderDashboard = (container) => {
     container.appendChild(renderDashboardContainer());
 }
 
