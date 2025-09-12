@@ -259,3 +259,31 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 /*** DASHBOARD FAVORITES ***/
 
 .dashboard-favorites-header { font-size: 1rem; color: var(--color-text-grey) }
+
+.card-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.crypto-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 30px;
+
+  background-color: rgb(204, 128, 96);
+}
+
+.card-info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  fill: #ff0000; 
+}
+

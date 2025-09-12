@@ -9,28 +9,30 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
     const cardInfoContainer = document.createElement('div');
     cardInfoContainer.className = 'card-info-container';
 
-    const cardName = document.createElement('p');
-    cardName.className = 'card-name';
-    cardName.textContent = name;
-
-    const cardIconContainer = document.createElement('div');
-    cardIconContainer.className = 'card-icon-container';
-
     const cardIcon = new Image();
     cardIcon.className = 'card-icon';
     cardIcon.src = icon;
+
+    const cardNameContainer = document.createElement('div');
+    cardNameContainer.className = 'card-name-container';
+
+    const cardName = document.createElement('p');
+    cardName.className = 'card-name';
+    cardName.textContent = name;
 
     const cardSymbol = document.createElement('p');
     cardSymbol.className = 'card-symbol';
     cardSymbol.textContent = symbol;
 
-    cardInfoContainer.append(cardName, cardIconContainer);
+    cardNameContainer.append(cardName, cardSymbol);
+
+    cardInfoContainer.append(cardIcon, cardNameContainer);
 
     const cardCanvasContainer = document.createElement('div');
     cardCanvasContainer.className = 'card-canvas-container';
 
     const canvas = document.createElement('canvas');
-    canvas.width = '220';
+    canvas.width = '150';
     canvas.height = '70';
     new Chart(canvas, {
         type: "line",
@@ -38,11 +40,11 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
             labels: sparkline.map((_, i) => i),
             datasets: [{
                 data: sparkline,
-                borderColor: "#0000",
+                borderColor: 'black',
                 borderWidth: 2,
                 pointRadius: 0,
                 fill: false,
-                tension: 0.3,
+                tension: 0.1,
             }],
         },
         options: {
@@ -61,6 +63,7 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
     cardPrice.className = 'card-price';
 
     const cardPctChange = document.createElement('div');
+    cardPctChange.textContent = priceChangePercentage;
     if (priceChangePercentage >= 0) {
         cardPctChange.className = 'card-pct-change-container-pos';
     } else {

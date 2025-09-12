@@ -1,7 +1,7 @@
 import { renderDashboardBalance } from './balance';
 import { renderDashboardFavorites } from './favorites';
 
-const renderDashboardContainer = () => {
+const renderDashboardContainer = async () => {
     const dashboardContainer = document.createElement('div');
     dashboardContainer.className = 'dashboard-container';
 
@@ -13,8 +13,8 @@ const renderDashboardContainer = () => {
 
     dashboardContainerLeft.append(
         renderDashboardBalance(),
-        renderDashboardFavorites()
-        
+        await renderDashboardFavorites()
+
     );
 
     dashboardContainer.append(dashboardContainerLeft, dashboardContainerRight);
@@ -22,7 +22,7 @@ const renderDashboardContainer = () => {
     return dashboardContainer;
 }
 
-export const renderDashboard = (container) => {
-    container.appendChild(renderDashboardContainer());
+export const renderDashboard = async (container) => {
+    container.appendChild(await renderDashboardContainer());
 }
 

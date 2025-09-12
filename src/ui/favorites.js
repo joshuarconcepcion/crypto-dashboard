@@ -1,7 +1,7 @@
 import { getMarketCoin } from "../api/coin";
 import { createCard } from "./card";
 
-export const renderDashboardFavorites = () => {
+export const renderDashboardFavorites = async () => {
     const dashboardFavoritesContainer = document.createElement('div');
     dashboardFavoritesContainer.className = 'dashboard-favorites-container';
 
@@ -10,24 +10,26 @@ export const renderDashboardFavorites = () => {
     dashboardFavoritesHeader.textContent = 'FAVORITES'
 
     dashboardFavoritesContainer.append(dashboardFavoritesHeader);
-    dashboardFavoritesContainer.append(renderFavoritesCards());
+
+    dashboardFavoritesContainer.append(await renderFavoritesCards());
     return dashboardFavoritesContainer;
 }
 
 const renderFavoritesCards = async () => {
+    const cardContainer = document.createElement('div');
+    cardContainer.className = 'card-container';
+
     try {
         const coins = await getMarketCoin();
-        const cardContainer = document.createElement('div');
-        cardContainer.className = 'card-container';
 
         coins.forEach(c => {
             const card = createCard({
                 name: c.name,
-                icon: c.icon,
-                symbol: c.symbol,
+                icon: c.image,
+                symbol: c.symbol.toUpperCase(),
                 price: c.current_price,
                 priceChangePercentage: c.price_change_percentage_24h,
-                sparkline: c.sparkline_in_7d
+                sparkline: c.sparkline_in_7d.price
             });
             cardContainer.appendChild(card);
         });

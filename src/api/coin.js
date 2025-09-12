@@ -5,6 +5,7 @@ export async function getMarketCoin(ids = COINS, vs = 'usd') {
     url.searchParams.set('vs_currency', vs);
     url.searchParams.set('ids', ids.join(','));
     url.searchParams.set('price_change_percentage', '24h');
+    url.searchParams.set('sparkline', 'true');
 
     try {
         const res = await fetch(url.toString(),{ headers: { Accept: "application/json" } });
