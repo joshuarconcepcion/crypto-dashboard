@@ -14,7 +14,7 @@ const renderDashboardContainer = () => {
     dashboardContainerLeft.append(
         renderDashboardBalance(),
         renderDashboardFavorites()
-
+        
     );
 
     dashboardContainer.append(dashboardContainerLeft, dashboardContainerRight);

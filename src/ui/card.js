@@ -55,6 +55,20 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
     });
 
     cardCanvasContainer.appendChild(canvas);
-    
+
+    const cardPrice = document.createElement('p');
+    cardPrice.textContent = price;
+    cardPrice.className = 'card-price';
+
+    const cardPctChange = document.createElement('div');
+    if (priceChangePercentage >= 0) {
+        cardPctChange.className = 'card-pct-change-container-pos';
+    } else {
+        cardPctChange.className = 'card-pct-change-container-neg';
+    }
+
+    card.append(cardInfoContainer, cardCanvasContainer, cardPrice, cardPctChange);
+
+    return card;
 
 }
