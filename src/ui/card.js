@@ -2,9 +2,27 @@ import { Chart, LineController, LineElement, PointElement, LinearScale, Category
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale);
 
+const formatUSD = (n) => {
+    if (n < 1) {
+        return `$${n.tofixed(6)}`;
+    }
+    return `$${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+const CARD_COLORS = [
+    'rgb(204, 128, 96)', 
+    'rgb(82, 71, 215)', 
+    'rgb(42, 157, 143)', 
+    'rgb(233, 169, 58)'
+];
+let colorIndex = 0;
+
 export const createCard = ({name, icon, symbol, price, priceChangePercentage, sparkline}) => {
     const card = document.createElement('div');
     card.className = 'crypto-card';
+
+    card.style.backgroundColor = CARD_COLORS[colorIndex % CARD_COLORS.length];
+    colorIndex++;
 
     const cardInfoContainer = document.createElement('div');
     cardInfoContainer.className = 'card-info-container';
@@ -59,7 +77,7 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
     cardCanvasContainer.appendChild(canvas);
 
     const cardPrice = document.createElement('p');
-    cardPrice.textContent = price;
+    cardPrice.textContent = formatUSD(price);
     cardPrice.className = 'card-price';
 
     const cardPctChange = document.createElement('div');

@@ -39,3 +39,4 @@ const renderFavoritesCards = async () => {
 
     return cardContainer;
 }
+

@@ -258,6 +258,12 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 
 /*** DASHBOARD FAVORITES ***/
 
+.dashboard-favorites-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .dashboard-favorites-header { font-size: 1rem; color: var(--color-text-grey) }
 
 .card-container {
@@ -270,20 +276,30 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   flex-direction: column;
   padding: 1rem;
   border-radius: 30px;
-
-  background-color: rgb(204, 128, 96);
+  gap: 1rem;
+  
 }
 
 .card-info-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-name-container {
+  margin-bottom: 1rem;
+  line-height: 0.5;
 }
 
 .card-icon {
-  width: 24px;
-  height: 24px;
+  width: calc(24px + 1rem);
+  height: calc(24px + 1rem);
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   display: block;
-  fill: #ff0000; 
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
