@@ -10,9 +10,9 @@ const formatUSD = (n) => {
 }
 
 const CARD_COLORS = [
-    'rgb(204, 128, 96)', 
-    'rgb(82, 71, 215)', 
-    'rgb(219, 176, 107)', 
+    'rgb(213, 128, 96)',  
+    'rgb(226, 176, 97)', 
+    'rgb(82, 71, 219)',
     'rgb(101, 147, 110)'
 ];
 let colorIndex = 0;
