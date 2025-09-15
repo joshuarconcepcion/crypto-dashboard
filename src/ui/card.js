@@ -1,6 +1,11 @@
 import { Chart, LineController, LineElement, PointElement, LinearScale, CategoryScale } from 'chart.js';
-
+import bitcoinImg from '../media/images/dashboard/001-bitcoin.png';
+import ethImg from '../media/images/dashboard/002-ethereum.png';
+import xrpImg from '../media/images/dashboard/003-xrp.png';
+import tetherImg from '../media/images/dashboard/004-tether.png';
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale);
+
+
 
 const formatUSD = (n) => {
     if (n < 1) {
@@ -17,7 +22,15 @@ const CARD_COLORS = [
 ];
 let colorIndex = 0;
 
-export const createCard = ({name, icon, symbol, price, priceChangePercentage, sparkline}) => {
+const CARD_ICONS = [
+    bitcoinImg,
+    ethImg,
+    xrpImg,
+    tetherImg
+];
+let iconIndex = 0;
+
+export const createCard = ({name, symbol, price, priceChangePercentage, sparkline}) => {
     const card = document.createElement('div');
     card.className = 'crypto-card';
 
@@ -29,7 +42,8 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
 
     const cardIcon = new Image();
     cardIcon.className = 'card-icon';
-    cardIcon.src = icon;
+    cardIcon.src = CARD_ICONS[iconIndex % CARD_ICONS.length];
+    iconIndex++;
 
     const cardNameContainer = document.createElement('div');
     cardNameContainer.className = 'card-name-container';
@@ -81,12 +95,9 @@ export const createCard = ({name, icon, symbol, price, priceChangePercentage, sp
     cardPrice.className = 'card-price';
 
     const cardPctChange = document.createElement('div');
-    cardPctChange.textContent = priceChangePercentage;
-    if (priceChangePercentage >= 0) {
-        cardPctChange.className = 'card-pct-change-container-pos';
-    } else {
-        cardPctChange.className = 'card-pct-change-container-neg';
-    }
+    cardPctChange.textContent = priceChangePercentage + '%';
+        cardPctChange.className = 'card-pct-change-container';
+
 
     card.append(cardInfoContainer, cardCanvasContainer, cardPrice, cardPctChange);
 
