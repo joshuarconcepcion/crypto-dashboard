@@ -15,8 +15,9 @@ const renderDashboardContainer = async () => {
     dashboardContainerLeft.append(
         renderDashboardBalance(),
         await renderDashboardFavorites(),
-        renderDashboardInsights()
     );
+
+    dashboardContainerRight.append(renderDashboardInsights())
 
     dashboardContainer.append(dashboardContainerLeft, dashboardContainerRight);
 

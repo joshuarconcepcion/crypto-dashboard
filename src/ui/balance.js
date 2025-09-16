@@ -5,7 +5,7 @@ export const renderDashboardBalance = () => {
     dashboardBalanceContainer.classList.add('dashboard-balance-container');
 
     const balanceHeader = document.createElement('p');
-    balanceHeader.className = 'balance-header';
+    balanceHeader.className = 'dashboard-header';
     balanceHeader.innerHTML = 'TOTAL BALANCE'
 
     const balanceNumber = document.createElement('p');
