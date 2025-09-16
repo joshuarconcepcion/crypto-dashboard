@@ -232,7 +232,7 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   color: var(--color-text-grey);
 }
 
-.balance-number { font-size: 5rem; }
+.balance-number { font-size: 4rem; }
 
 .balance-number span { color: var(--color-text-grey); font-size: 3rem; }
 

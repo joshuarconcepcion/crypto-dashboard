@@ -1,5 +1,6 @@
 import { renderDashboardBalance } from './balance';
 import { renderDashboardFavorites } from './favorites';
+import { renderDashboardInsights } from './insights';
 
 const renderDashboardContainer = async () => {
     const dashboardContainer = document.createElement('div');
@@ -13,8 +14,8 @@ const renderDashboardContainer = async () => {
 
     dashboardContainerLeft.append(
         renderDashboardBalance(),
-        await renderDashboardFavorites()
-
+        await renderDashboardFavorites(),
+        renderDashboardInsights()
     );
 
     dashboardContainer.append(dashboardContainerLeft, dashboardContainerRight);
