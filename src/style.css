@@ -243,7 +243,7 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 
 .balance-number { font-size: 3rem; }
 
-.balance-number span { color: var(--color-text-grey); font-size: 3rem; }
+.balance-number span { color: var(--color-text-grey); font-size: 1.5rem; }
 
 .balance-trend {
   display: flex;
@@ -317,6 +317,10 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
   font-size: 1.5rem;
 }
 
+.card-canvas-container {
+    align-self: center;
+  }
+
 .card-price {
   font-size: 1.5rem;
 }
@@ -349,8 +353,67 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 }
 
 .dashboard-insights-content {
-  width: 85%;
+  width: clamp(350px, 80%, 600px);
   height: auto;
   border: 1px solid white;
   border-radius: 10px;
+}
+
+/*** TOPBAR (mobile) ***/
+
+.topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  color: var(--color-text-white);
+}
+
+.hamburger-btn {
+  display: grid;
+  gap: 5px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-white);
+}
+
+
+.topbar-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text-white);
+}
+
+/*** MOBILE OPTIMIZATION ***/
+
+@media (max-width: 900px) {
+  html, body { overflow: auto; }
+  .topbar { display: flex; }
+  #app { flex-direction: column; }
+  .sidebar { display: none; }
+
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .crypto-card {
+    width: 100%;
+  }
+
+  .card-canvas-container {
+    align-self: center;
+  }
+  
 }

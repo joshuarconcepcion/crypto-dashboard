@@ -1,10 +1,12 @@
 import { renderSidebar } from "./sidebar";
 import { renderDashboard } from "./dashboard";
+import { renderTopbar } from "./topbar";
 
 const container = document.getElementById('app');
 
-export const renderUI = () => {
+export const renderUI = async () => {
+    renderTopbar(container);
     renderSidebar(container);
-    renderDashboard(container);
+    await renderDashboard(container);
 }
 
