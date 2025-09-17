@@ -343,8 +343,9 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 .dashboard-insights-content-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: center;
   gap: 3rem;
+  width: clamp(200px, 80%, 600px);
 }
 
 .dashboard-header {
@@ -353,7 +354,7 @@ body { font-family: 'Poppins'; background-color: var(--color-background-grey); }
 }
 
 .dashboard-insights-content {
-  width: clamp(350px, 80%, 600px);
+  
   height: auto;
   border: 1px solid white;
   border-radius: 10px;
